@@ -1,13 +1,206 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Overpass", sans-serif;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  
+  
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+
+  --ligher-blue: hsl(213, 19%, 25%);
+}
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--Very-Dark-Blue);
+}
+
+.card {
+  background-color: var(--Dark-Blue);
+  color: var(--Light-Grey);
+  width: 95%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.star--icon {
+  background-color: var(--ligher-blue);
+  padding: 10px;
+  border-radius: 100vw;
+}
+
+h1 {
+  color: white;
+  margin-block: 15px;
+  font-size: 28px;
+}
+
+.description {
+  font-size: 15px;
+}
+.rating--option {
+  background-color: var(--ligher-blue);
+  border: none;
+  width: 42px;
+  aspect-ratio: 1 /1 ;
+  border-radius: 100vw;
+  color: var(--Light-Grey);
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating--option:hover {
+  background-color: var(--Orange);
+  color: black;
+}
+
+
+.rating--options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 25px;
+}
+
+.submit {
+  width: 100%;
+  border-radius: 100vw;
+  padding-block: 15px;
+  border: none;
+  background-color: var(--Orange);
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: var(--White);
+}
+
+.selected {
+  background-color: #fff;
+  color: black;
+}
+
+
+
+.card--side {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 96%;
+  padding-block: 35px;
+  max-width: 420px;
+}
+
+.card--side-description {
+  color: var(--Light-Grey);
+
+}
+
+.selection {
+  color: var(--Orange);
+  background-color: var(--ligher-blue);
+  padding: 5px 15px;
+  border-radius: 100vw;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.display--none {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .star--icon {
+    padding: 15px;
+  }
+  .card {
+    border-radius: 35px;
+    padding: 30px;
+  }
+  .card--side {
+    padding-block: 40px;
+  }
+  h1 {
+    margin-top: 40px;
+  }
+  .rating--option {
+    width: 50px;
+  }
+  .submit {
+    padding-block: 12px;
+  }
+  .selection {
+    margin-top: 30px;
+  }
+  .card--side-description {
+    line-height: 1.6;
+  }
 }
